@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row">
+        <h3 class="my-3 fs-3 fw-bold">My wish List</h3>
+        <div class="col-md-10 m-auto bg-light p-5 shadow">
+            <h2><span class="text-main fw-bold">Total Price</span> {{wishitem?.totalCartPrice}}</h2>
+            <div *ngFor="let prod of wishitem" class="row py-3 border-bottom">
+                <div class="col-md-2">
+                   <img [src]="prod.imageCover" class="w-100"/>
+                </div>
+                <div class="col-md-10 d-flex justify-content-between align-items-center">
+                    <div>
+                        <p class="text-main">{{prod.title}}</p>
+                        <p>{{prod.price}}EGP</p>
+                        <button (click)="delwish(prod.id)" class="btn btn-outline-danger m-3"><i class="fa-solid fa-trash-can fs-4"></i> Remove</button>
+                    </div>
+
+                    <div>
+                        <button (click)="addtocart(prod.id)" class="btn bg-main w-100 text-light">add to card</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

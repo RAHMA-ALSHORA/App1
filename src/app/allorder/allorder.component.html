@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="text-center">
+    <h2 class="text-main m-5 fw-bold ">your order</h2>
+    </div>
+    <div class="row">
+       <div *ngFor="let order of orders; let i = index" class="col-md-12 border border-1 rounded rounded-3">
+          <h3 class="fw-bold">Order: {{i+1}}</h3>
+          <div class="row py-3 px-5" *ngFor="let cart of order.cartItems">
+            <div class="col-md-2">
+                <img [src]="cart.product.imageCover" alt="product" class="w-100"/>
+            </div>
+            <div class="col-md my-5 d-flex justify-content-between border-bottom">
+                <div>
+                   <h3 class="text-main fw-bold">{{cart.product.title}}</h3>
+                   <p><span class="text-main">count: </span>{{cart.count}} </p>
+                   <p> <span class="text-main">price:</span> {{cart.price}}EGP</p>
+                </div>
+            </div>
+          </div> 
+          <div class="row">
+            <div class="col-md-12 d-flex justify-content-center align-items-center">
+                <div class="border border-1 rounded rounded-3 p-1 mb-2 w-75 text-center">
+                    <p><span class="text-main">IsDelivered: </span> <span class="{{order.isDelivered==='false'?'bg-danger': 'bg-main'}} p-1 text-light rounded rounded-3">{{order.isDelivered==='fals'}} </span></p>
+                    <p><span class="text-main">Ispaid: </span> <span class="{{order.isPaid==='false'?'bg-danger': 'bg-main'}} p-1 text-light rounded rounded-3">{{order.isPaid==='false'}} </span></p>
+                     <p><span class="text-main">payment Method Tyoe: </span> <span>{{order.paymentMethodType}}</span></p>
+                     <p> <span class="text-main">Total order price: </span> <span>{{order.totalOrderPrice}} EGP</span></p>
+                </div>
+            </div>
+          </div>  
+       </div>   
+    </div>
+</div>

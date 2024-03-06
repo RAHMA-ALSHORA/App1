@@ -1,0 +1,32 @@
+<div class="container forgitpass">
+    <form [formGroup]="forgitpass" (ngSubmit)="sendcod(forgitpass)">
+        <div class="row">
+            <div class="col-md-8 m-auto">
+                <div class="layer bg-light shadow p-5">
+                    <label>Enter your Email</label>
+                    <input formControlName="email" type="email" class="form-control my-3"/>
+                    <p class="text-main">{{messagsucss}}</p>
+                    <p class="text-danger">{{errmess}}</p>
+                    <button class="btn text-light bg-main my-2">send code</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<div class="container verfcodde d-none">
+    <form [formGroup]="verfycod" (ngSubmit)="vercod(verfycod)">
+        <div class="row">
+            <div class="col-md-8 m-auto">
+                <div class="layer bg-light shadow p-5">
+                    <label>Enter resetCode</label>
+                    <input formControlName="resetCode" type="text" class="form-control my-3"/>
+                    <p class="text-main">{{messagsuc}}</p>
+                    <p class="text-danger">{{errmes}}</p>
+                    <button class="btn text-light bg-main my-2">send</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

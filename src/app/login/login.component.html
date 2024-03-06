@@ -1,0 +1,46 @@
+<section>
+    <form [formGroup]="loginform" (ngSubmit)="logsubmit(loginform)">
+     <div class="container all">
+         <h1 class="fw-bolder m-4">login now</h1>
+         <div class="row ">
+             <div class="col-md-12 m-auto bg-light shadow"> 
+                            
+                     <div class="m-3">
+                         <label for="user_email">Email:</label>
+                         <input formControlName="email" type="email" id="user_email" class="form-control"/>
+                         <div *ngIf="loginform.get('email')?.errors && loginform.get('email')?.touched">
+                             <p class="text-danger" *ngIf="loginform.get('email')?.getError('required')">this requierd input </p>
+                             <p class="text-danger" *ngIf="loginform.get('email')?.getError('email')">Enter avalid email</p>
+                             
+                         </div>
+                     </div>
+ 
+                     <div class="m-3">
+                         <label for="user_pass">password:</label>
+                         <input formControlName="password" type="password" id="user_pass" class="form-control"/>
+                         <div *ngIf="loginform.get('password')?.errors && loginform.get('password')?.touched">
+                             <p class="text-danger" *ngIf="loginform.get('password')?.getError('required')">this requierd input </p>
+                             <p class="text-danger" *ngIf="loginform.get('password')?.getError('pattern')">Enter avalid password</p>
+                             
+                         </div>
+                     </div>
+                     <p *ngIf="errors" class="text-danger">{{errors}}</p>
+                     <div>
+                         <button [disabled]="loginform.invalid" class="btn bg-main text-light float-end m-3" type="submit">log in
+                        <span *ngIf="isloading">
+                            <i class="fa-solid fa-spinner fa-spin"></i>
+                        </span>
+                        </button>
+                     </div>
+                     <div>
+                        <a class="text-main my-3" routerLink="/forgitpassword">forgit password</a>
+                        <p class="text-muted">not have account <a class="text-main" routerLink="/register">rigist</a></p>
+                     </div>
+                 </div>
+                 </div>
+ 
+             </div>
+ 
+    </form>
+ </section>
+ 

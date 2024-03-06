@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row">
+        <h3 class="my-3 fw-bold">shopping cart</h3>
+        <div class="text-end">
+           <button  routerLink="/chekout" class="btn bg-main  text-light m-5">online payment</button>
+        </div>
+      <div *ngIf="cartitem.length==[]" class="w-50 m-auto bg-light shadow">
+        <h3 class="text-main fw-bold m-5">Your cart is empty </h3>
+         <button  routerLink="/allorders" class="btn w-100 my-3 bg-main text-light ">Go To Allorder </button>
+      </div>
+        <div *ngIf="cartitem.length!=[]" class="col-md-10 m-auto bg-light p-5 shadow">
+            <h2><span class="text-main fw-bold">Total Price</span> {{cartitem?.totalCartPrice}}</h2>
+            <div *ngFor="let prod of cartitem?.products" class="row py-3 border-bottom">
+                <div class="col-md-2">
+                   <img [src]="prod.product.imageCover" class="w-100"/>
+                </div>
+                <div class="col-md-10 d-flex justify-content-between align-items-center">
+                    <div>
+                        <p class="text-main">{{prod.product.title}}</p>
+                        <p>{{prod.price}}EGP</p>
+                        <button (click)="delcard(prod.product._id)" class="btn btn-outline-danger m-3"><i class="fa-solid fa-trash-can fs-4"></i> Remove</button>
+                    </div>
+                    <div>
+                        <button (click)="updatcart(prod.count+1,prod.product._id)" class="btn btn-outline-success m-2">+</button>
+                        <span>{{prod.count}}</span>
+                        <button (click)="updatcart(prod.count-1,prod.product._id)" class="btn btn-outline-success mx-2">-</button> 
+                    </div>
+                </div>
+            </div>
+            <button routerLink="/allorders" class="btn w-50 ord bg-main text-light ">My order </button>
+            <div class="w-50 m-5">
+            <button (click)="clesrcard()" class="btn text-main clr m-auto">clear Your card</button>
+            </div>
+        </div>
+    </div>
+</div>

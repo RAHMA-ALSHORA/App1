@@ -1,0 +1,23 @@
+.row{
+    text-align: center;
+   
+}
+.btn{
+    padding: 0;
+}
+    
+.card:hover{
+    box-shadow: 10px 10px 20px 1px rgba(109, 176, 96, 0.5);
+    
+}
+.card{
+    padding: 0;
+    margin: 0;
+    border:  1px solid black;
+}
+.col-md-3{
+text-align: center;
+}
+.sub:hover{
+    box-shadow: 10px 10px 20px 1px rgba(109, 176, 96, 0.5);
+}

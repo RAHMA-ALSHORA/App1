@@ -1,0 +1,35 @@
+.card:hover{
+    box-shadow: 10px 10px 20px 1px rgba(109, 176, 96, 0.5);
+    
+}
+.card{
+  
+    padding: 0;
+    margin: 0;
+    border:  1px solid black;
+}
+.col-md-3{
+text-align: center;
+}
+.container{
+    position: relative;
+}
+.layer{
+background-color: rgba(94, 94, 94, 0.5);
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+}
+.box{
+    width: 500px;
+    position: fixed;
+    top: 0;
+    left: 40%;
+   
+}
+.fb{
+    float: right;
+    background-color: grey;
+}

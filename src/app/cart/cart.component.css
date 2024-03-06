@@ -1,0 +1,11 @@
+.ord{
+    margin-left: 22%;
+    margin-top: 5%;
+}
+.clr{
+    border: 2px solid green;
+}
+.clr:hover{
+    color: red;
+    border: 2px solid red;
+}

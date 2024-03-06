@@ -1,0 +1,26 @@
+<div class="container">
+    <form [formGroup]="check" (ngSubmit)="payform(check)">
+        <div class="row ">
+            <div class="col-md-8 m-auto my-5">
+                <div class="layercart bg-light p-5">
+                    <div class="my-2">
+                        <label>details</label>
+                        <input formControlName="details" type="text" class="form-control"/>
+                    </div>
+
+                    <div class="my-2">
+                        <label>phone</label>
+                        <input formControlName="phone" type="tel" class="form-control"/>
+                    </div>
+
+                    <div class="my-2">
+                        <label>city</label>
+                        <input formControlName="city" type="text" class="form-control"/>
+                    </div>
+
+                    <button [disabled]="check.invalid" type="submit" class="btn bg-main text-light">pay</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
